@@ -82,6 +82,18 @@
             key-positions = <17 32>;
             layers = <0>;
         };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <2 1>;
+            layers = <0>;
+        };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <17 18>;
+            layers = <0>;
+        };
     };
 
     keymap {
