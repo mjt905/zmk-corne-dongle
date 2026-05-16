@@ -358,3 +358,9 @@ combos:
 - p: [17, 32]
   k: Ctl+V
   l: [QWERTY]
+- p: [2, 1]
+  k: $$mdi:keyboard-esc$$
+  l: [QWERTY]
+- p: [17, 18]
+  k: $$mdi:backspace-reverse-outline$$
+  l: [QWERTY]
