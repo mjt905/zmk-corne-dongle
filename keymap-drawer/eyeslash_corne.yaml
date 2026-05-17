@@ -395,27 +395,28 @@ layers:
 combos:
 - p: [0, 13, 28]
   k: '&soft_off'
+  l: [QWERTY]
 - p: [1, 14]
   k: $$mdi:keyboard-tab$$
-  l: [SYMBOL]
+  l: [QWERTY]
 - p: [4, 5]
   k: {t: '$$mdi:backspace$$', type: backspace}
-  l: [SYMBOL, NUMBER]
+  l: [SYMBOL, NUMBER, QWERTY]
 - p: [10, 11]
   k: {t: '$$mdi:backspace$$', type: backspace}
-  l: [SYMBOL, NUMBER]
+  l: [QWERTY, SYMBOL]
 - p: [17, 32]
   k: Ctl+V
-  l: [NUMBER]
+  l: [QWERTY]
 - p: [2, 1]
   k: $$mdi:keyboard-esc$$
-  l: [NUMBER]
+  l: [QWERTY]
 - p: [17, 18]
   k: $$mdi:backspace-reverse-outline$$
-  l: [NUMBER]
+  l: [QWERTY]
 - p: [15, 2]
   k: $$mdi:apple-keyboard-caps$$
-  l: [NUMBER]
+  l: [QWERTY]
 - p: [3, 16]
   k: $$mdi:apple-keyboard-option$$
   l: [QWERTY]
