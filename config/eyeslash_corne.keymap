@@ -136,6 +136,12 @@
             key-positions = <15 2>;
             layers = <1>;
         };
+
+        ALT {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <3 16>;
+            layers = <0>;
+        };
     };
 
     keymap {
