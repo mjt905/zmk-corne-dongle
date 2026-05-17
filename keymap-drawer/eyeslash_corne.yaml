@@ -416,3 +416,6 @@ combos:
 - p: [15, 2]
   k: $$mdi:apple-keyboard-caps$$
   l: [NUMBER]
+- p: [3, 16]
+  k: $$mdi:apple-keyboard-option$$
+  l: [QWERTY]
