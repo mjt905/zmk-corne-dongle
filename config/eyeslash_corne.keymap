@@ -34,8 +34,6 @@
             display-name = "Shift/Caps Lock Tap Dance";
             #binding-cells = <0>;
             bindings = <&kp Z>, <&kp F14>;
-
-            tapping-term-ms = <170>;
         };
 
         NandComma: NandComma {
