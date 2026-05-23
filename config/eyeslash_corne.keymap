@@ -80,26 +80,6 @@
             flavor = "balanced";
             quick-tap-ms = <125>;
         };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp F14>;
-
-            tapping-term-ms = <170>;
-            label = "NEW_BEHAVIOR";
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp F14>;
-
-            tapping-term-ms = <170>;
-            label = "NEW_BEHAVIOR";
-        };
     };
 
     rgb_encoder: rgb_encoder {
