@@ -101,7 +101,7 @@
 
         softoff {
             bindings = <&soft_off>;
-            key-positions = <0 13 28>;
+            key-positions = <1 29 14>;
             layers = <0>;
         };
 
@@ -114,7 +114,7 @@
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <4 5>;
-            layers = <2 1 0>;
+            layers = <2 1 0 5>;
             timeout-ms = <30>;
         };
 
@@ -140,7 +140,7 @@
         del {
             bindings = <&kp DEL>;
             key-positions = <17 18>;
-            layers = <0>;
+            layers = <0 2 1 5>;
         };
 
         caps {
@@ -154,6 +154,12 @@
             key-positions = <3 16>;
             layers = <0>;
         };
+
+        sshift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <14 29>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -163,9 +169,9 @@
             display-name = "QWERTY";
             bindings = <
 &trans  &kp Q        &kp W  &kp E           &kp R            &kp T                               &kp UP                &kp Y        &kp U        &kp I          &kp O      &kp P            &none
-&none   &NEW_LT 3 A  &kp S  &kp D           &f_ctrl LCTRL F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J        &kp K          &kp L      &kp BACKSPACE    &none
+&none   &NEW_LT 3 A  &kp S  &kp D           &f_ctrl LCTRL F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J        &kp K          &kp L      &NEW_LT 3 F2     &none
 &none   &td0         &kp X  &kp C           &NEW_LT 4 V      &kp B        &kp SPACE              &kp DOWN              &NandComma   &MandPeriod  &kp SLASH      &kp GRAVE  &kp RIGHT_SHIFT  &none
-                            &lt 2 LEFT_GUI  &lt 5 SPACE      &lt 1 ENTER                                               &lt 2 ENTER  &lt 1 SPACE  &kp RIGHT_ALT
+                            &lt 2 LEFT_GUI  &lt 5 SPACE      &lt 1 ENTER                                               &lt 1 ENTER  &lt 2 SPACE  &kp RIGHT_ALT
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_BRACKET LEFT_BRACKET>;
@@ -186,10 +192,10 @@
         raise_layer {
             display-name = "FN";
             bindings = <
-&none  &kp CAPSLOCK    &kp F1  &kp F2   &kp F3        &kp F4                               &mmv MOVE_UP                     &kp PAGE_UP    &kp HOME  &kp UP    &kp END    &kp INSERT  &none
-&none  &kp LA(TAB)     &kp F5  &kp F6   &kp F7        &kp F8               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PAGE_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RSHFT   &none
-&none  &kp LEFT_SHIFT  &kp F9  &kp F10  &kp F11       &kp F12    &trans                    &mmv MOVE_DOWN                   &kp F13        &kp F14   &kp F15   &to 6      &to 7       &none
-                               &trans   &kp LEFT_ALT  &kp ENTER                                                             &trans         &trans    &trans
+&none  &kp INSERT    &kp F15         &kp F16  &kp F17       &kp F18                              &mmv MOVE_UP                     &kp PAGE_UP    &kp HOME  &kp UP    &kp END    &kp INSERT  &none
+&none  &kp TAB       &trans          &trans   &kp F2        &trans               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PAGE_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RSHFT   &none
+&none  &kp LEFT_ALT  &kp LEFT_SHIFT  &trans   &trans        &trans     &trans                    &mmv MOVE_DOWN                   &kp F13        &kp F14   &kp F15   &to 6      &to 7       &none
+                                     &trans   &kp LEFT_ALT  &kp ENTER                                                             &trans         &trans    &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -197,10 +203,10 @@
 
         little {
             bindings = <
-&none   &kp LA(F4)      &mkp MB2        &kp UP_ARROW    &mkp MB1         &msc SCRL_UP                      &trans          &trans        &trans        &studio_unlock  &bt BT_CLR_ALL  &bt BT_CLR    &mo 1
-&trans  &none           &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc SCRL_DOWN            &trans  &trans  &trans  &trans        &trans        &trans          &trans          &trans        &to 6
-&none   &kp LEFT_SHIFT  &none           &trans          &kp F13          &none           &trans            &trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4  &trans
-                                        &kp COMMA       &kp PERIOD       &kp GRAVE                                         &trans        &trans        &trans
+&trans  &kp LA(F4)  &kp HOME        &kp UP_ARROW    &kp END          &msc SCRL_UP                      &trans          &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &trans  &trans
+&trans  &none       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc SCRL_DOWN            &trans  &trans  &trans  &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans      &kp PAGE_UP     &kp PAGE_DOWN   &kp F13          &to 6           &trans            &trans          &trans          &trans          &trans          &trans           &trans  &trans
+                                    &kp COMMA       &kp PERIOD       &kp GRAVE                                         &mkp MB1        &mkp MB2        &mkp MB3
             >;
 
             label = "Arrow";
@@ -208,10 +214,10 @@
 
         win {
             bindings = <
-&trans  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LG(NUMBER_4)  &none                     &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(LS(TAB))   &kp LC(T)         &kp LC(TAB)       &trans            &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(L)         &kp LC(W)         &kp LA(TAB)       &trans            &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                            &trans            &trans            &trans                                    &trans  &trans  &trans
+&trans  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LG(NUMBER_4)  &trans                    &trans          &kp F1  &kp F2   &kp F3   &kp F4   &kp BSPC   &trans
+&trans  &kp LC(LS(TAB))   &kp LC(T)         &kp LC(TAB)       &trans            &trans            &trans  &trans  &trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp RSHFT  &trans
+&trans  &kp LC(L)         &kp LC(W)         &kp LA(TAB)       &trans            &trans  &trans            &trans          &kp F9  &kp F10  &kp F11  &kp F12  &kp ENTER  &trans
+                                            &kp LC(F)         &trans            &trans                                    &trans  &trans   &trans
             >;
 
             label = "Win";
@@ -219,10 +225,10 @@
 
         RtoL {
             bindings = <
-&trans  &kp P           &kp O     &kp I     &kp U   &kp Y                     &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp ENTER       &kp L     &kp K     &kp J   &kp H             &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LEFT_SHIFT  &kp LALT  &kp LGUI  &kp M   &kp N   &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans    &trans  &trans                                    &trans  &trans  &trans
+&trans  &kp P           &kp O      &kp I          &kp U   &kp Y                     &trans          &trans        &trans        &studio_unlock  &bt BT_CLR_ALL  &bt BT_CLR    &trans
+&trans  &kp CAPS        &kp L      &kp K          &kp J   &kp H             &trans  &trans  &trans  &trans        &trans        &trans          &trans          &trans        &trans
+&trans  &kp LEFT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp M   &kp N   &trans            &trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4  &trans
+                                   &trans         &trans  &trans                                    &trans        &trans        &trans
             >;
 
             label = "RtoL";
@@ -230,10 +236,10 @@
 
         FPS {
             bindings = <
-&none  &kp ESCAPE      &kp Q  &kp W      &kp E      &kp R                           &trans          &kp Y         &kp U   &kp I   &kp O   &trans  &kp BSPC
-&none  &kp TAB         &kp A  &kp S      &kp D      &kp F                   &trans  &trans  &trans  &kp H         &kp J   &kp K   &kp L   &trans  &kp ENTER
-&none  &kp LEFT_SHIFT  &kp Z  &kp X      &kp C      &kp V         &trans            &trans          &kp B         &kp N   &kp M   &trans  &to 1   &to 2
-                              &kp LCTRL  &kp SPACE  &kp LEFT_ALT                                    &kp LEFT_GUI  &trans  &trans
+&none  &kp TAB         &kp Q  &kp W       &kp E      &kp R                           &trans          &kp Y         &kp U   &kp I   &kp O   &trans  &kp BSPC
+&none  &kp LEFT_SHIFT  &kp A  &kp S       &kp D      &kp F                   &trans  &trans  &trans  &kp H         &kp J   &kp K   &kp L   &trans  &kp ENTER
+&none  &kp LCTRL       &kp Z  &kp X       &kp C      &to 0         &trans            &trans          &kp B         &kp N   &kp M   &trans  &to 0   &to 2
+                              &kp ESCAPE  &kp SPACE  &kp LEFT_ALT                                    &kp LEFT_GUI  &trans  &trans
             >;
 
             label = "FPS";
@@ -241,10 +247,10 @@
 
         LOL {
             bindings = <
-&trans  &kp ESCAPE      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4                    &trans          &trans         &trans  &trans  &trans  &trans  &trans
-&trans  &kp TAB         &kp Q         &kp W         &kp E         &kp R                   &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans
-&trans  &kp LEFT_SHIFT  &kp A         &kp S         &kp D         &kp F         &trans            &trans          &trans         &trans  &trans  &trans  &to 1   &trans
-                                      &kt B         &kp SPACE     &kp LCTRL                                       &kp RIGHT_ALT  &trans  &trans
+&trans  &kp ESCAPE      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4                    &trans          &trans         &trans        &trans  &trans  &trans  &trans
+&trans  &kp TAB         &kp Q         &kp W         &kp E         &kp R                   &trans  &trans  &trans  &trans         &trans        &trans  &trans  &trans  &trans
+&trans  &kp LEFT_SHIFT  &kp C         &kp S         &kp D         &kp F         &trans            &trans          &trans         &trans        &trans  &trans  &to 0   &trans
+                                      &kt LCTRL     &kp SPACE     &kp B                                           &kp RIGHT_ALT  &kp LEFT_GUI  &trans
             >;
 
             label = "LOL";
